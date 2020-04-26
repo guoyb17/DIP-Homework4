@@ -2,3 +2,5 @@ env/
 .vscode/
 report.*
 __pycache__/
+*.pdf
+*.rar
