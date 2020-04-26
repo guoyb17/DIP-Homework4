@@ -13,7 +13,6 @@ def main(ipt_pic, mode):
     N = width
     bitmap = np.array(src).astype(np.int)
     if mode == 1:
-        print("[INFO] Exp1: Are they equivalent in effect?")
         print("[INFO] 1        Compare DCT coefficients")
         print("[INFO] 1.1      1d DCT and IDCT")
         print("[INFO] 1.1.1    All DCT coefficients")
@@ -92,6 +91,7 @@ def main(ipt_pic, mode):
                 PSNR_1_2_4 += (bitmap[x][y] - fin[x][y]) ** 2
         PSNR_1_2_4 = 10 * log10(255 * 255 * N * N / PSNR_1_2_4)
         print("[INFO] PSNR =", PSNR_1_2_4)
+    elif mode == 2:
         print("[INFO] 2        Compare size of blocks in 2D-DCT trial")
         print("[INFO] 2.1      size = 2")
         mid = my_dct_2d(bitmap, N, 2, 1)
@@ -138,9 +138,6 @@ def main(ipt_pic, mode):
                 PSNR_2_5 += (bitmap[x][y] - fin[x][y]) ** 2
         PSNR_2_5 = 10 * log10(255 * 255 * N * N / PSNR_2_5)
         print("[INFO] PSNR =", PSNR_2_5)
-    # elif mode == 2:
-    #     # TODO: Exp2: Why quantization is so important?
-    #     pass
     else:
         print("[ERROR] mode %d not implemented yet!" % mode)
 
