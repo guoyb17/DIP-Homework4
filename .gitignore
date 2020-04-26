@@ -1,3 +1,4 @@
 env/
 .vscode/
 report.*
+__pycache__/
